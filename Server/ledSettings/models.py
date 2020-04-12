@@ -7,6 +7,9 @@ class Profile(models.Model):
     brightness = models.IntegerField()
     timeout = models.IntegerField()
 
+    def __str__(self):
+        return self.name
+
 class UserProfile(models.Model):
     current_profile = models.OneToOneField(Profile, on_delete=models.CASCADE)
 
@@ -14,5 +17,8 @@ class UserProfile(models.Model):
         if not self.pk and UserProfile.objects.exists():
             raise BaseException('There can be only one UserProfile instance')
         return super(UserProfile, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return self.current_profile.name
 
 
