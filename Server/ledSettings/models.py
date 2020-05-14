@@ -2,7 +2,9 @@ from django.db import models
 
 class Profile(models.Model):
     name = models.CharField(max_length = 30)
-    color = models.CharField(max_length = 30)
+    red = models.IntegerField(default=0)
+    green = models.IntegerField(default=0)
+    blue = models.IntegerField(default=0)
     speed = models.IntegerField()
     brightness = models.IntegerField()
     timeout = models.IntegerField()

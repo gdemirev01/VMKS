@@ -8,7 +8,6 @@ verify_ssl = true
 [packages]
 django = "==3.0"
 djangorestframework = "*"
-corsheaders = "*"
 django-cors-headers = "*"
 
 [requires]
